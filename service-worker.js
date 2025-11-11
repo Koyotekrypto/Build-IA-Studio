@@ -1,9 +1,11 @@
-const CACHE_NAME = 'finanscan-v2';
+const CACHE_NAME = 'finanscan-v3';
 const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
   '/vite.svg',
+  '/icon-192x192.png',
+  '/icon-512x512.png'
 ];
 
 // Install a service worker

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LogoIcon, PlusIcon, ScannerIcon, ListIcon, ChartIcon, HistoryIcon, InstallIcon } from './icons/Icons';
+import { LogoIcon, PlusIcon, ScannerIcon, ListIcon, ChartIcon, HomeIcon, InstallIcon } from './icons/Icons';
 
 interface HeaderProps {
   onAddTransaction: () => void;
@@ -28,10 +28,10 @@ export const Header: React.FC<HeaderProps> = ({ onAddTransaction, onInstall, ins
             {/* Desktop Navigation */}
             <nav className="hidden md:block ml-10">
               <div className="flex items-baseline space-x-4">
-                <NavLink to="/scanner" className={navLinkClasses}><ScannerIcon className="h-5 w-5"/> Scanner</NavLink>
+                <NavLink to="/dashboard" className={navLinkClasses}><HomeIcon className="h-5 w-5"/> Dashboard</NavLink>
                 <NavLink to="/transactions" className={navLinkClasses}><ListIcon className="h-5 w-5"/> Transações</NavLink>
+                <NavLink to="/scanner" className={navLinkClasses}><ScannerIcon className="h-5 w-5"/> Scanner</NavLink>
                 <NavLink to="/reports" className={navLinkClasses}><ChartIcon className="h-5 w-5"/> Relatórios</NavLink>
-                <NavLink to="/history" className={navLinkClasses}><HistoryIcon className="h-5 w-5"/> Histórico</NavLink>
               </div>
             </nav>
           </div>

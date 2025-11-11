@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ScannerIcon, ListIcon, ChartIcon, HistoryIcon } from './icons/Icons';
+import { HomeIcon, ListIcon, ScannerIcon, ChartIcon } from './icons/Icons';
 
 interface NavItemProps {
   to: string;
@@ -26,10 +26,10 @@ export const BottomNavBar: React.FC = () => {
   return (
     <nav className="fixed bottom-0 left-0 right-0 h-16 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-lg md:hidden z-30">
       <div className="max-w-7xl mx-auto h-full flex justify-around items-center">
-        <NavItem to="/scanner" icon={<ScannerIcon />} label="Scanner" />
+        <NavItem to="/dashboard" icon={<HomeIcon />} label="Dashboard" />
         <NavItem to="/transactions" icon={<ListIcon />} label="Transações" />
+        <NavItem to="/scanner" icon={<ScannerIcon />} label="Scanner" />
         <NavItem to="/reports" icon={<ChartIcon />} label="Relatórios" />
-        <NavItem to="/history" icon={<HistoryIcon />} label="Histórico" />
       </div>
     </nav>
   );

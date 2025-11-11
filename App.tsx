@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Dashboard } from './pages/Dashboard';
 import { Scanner } from './pages/Scanner';
 import { TransactionsPage } from './pages/Transactions';
 import { Reports } from './pages/Reports';
-import { History } from './pages/History';
 import { AddTransactionModal } from './components/AddTransactionModal';
 import { Header } from './components/Header';
 import { type Transaction, type ExtractedData, type TransactionType } from './types';
@@ -150,11 +150,11 @@ const App: React.FC = () => {
         />
         <main className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto pb-20 md:pb-8">
           <Routes>
-            <Route path="/" element={<Navigate to="/scanner" replace />} />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<Dashboard transactions={transactions} onAddTransaction={handleOpenModalForManual} onEditTransaction={handleStartEdit} onDeleteTransaction={deleteTransaction} />} />
             <Route path="/scanner" element={<Scanner onFileSelect={handleFileSelectAndProcess} onPhotoCaptured={handleFileSelectAndProcess} />} />
             <Route path="/transactions" element={<TransactionsPage transactions={transactions} onAddTransaction={handleOpenModalForManual} onEditTransaction={handleStartEdit} onDeleteTransaction={deleteTransaction} />} />
             <Route path="/reports" element={<Reports transactions={transactions} onGenerateTestData={handleGenerateTestData} />} />
-            <Route path="/history" element={<History transactions={transactions} onEditTransaction={handleStartEdit} onDeleteTransaction={deleteTransaction} />} />
           </Routes>
         </main>
         
